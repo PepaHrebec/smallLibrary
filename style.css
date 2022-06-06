@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;1,500;1,600&display=swap');
 
 :root {
+    box-sizing: border-box;
     font-family: 'Chakra Petch', sans-serif;
     --grey: #F6E8EA;
     --blue: #5465FF;
@@ -14,12 +15,105 @@
     padding: 0;
 }
 
-header {
+html {
+    height: 100%;
+}
+
+body {
     background-color: var(--grey);
+    min-height: 100%;
+}
+
+header {
     color: var(--blue);
     text-align: center;
     padding: 20px;
     font-weight: 600;
     font-style: italic;
     font-size: 2em;
+    border-radius: 0 0 8px 8px;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 35% 1fr;
+    padding: 20px;
+    background-color: var(--grey);
+    margin: 40px 0;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: var(--blue) solid 2px;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: var(--grey);
+    width: 250px;
+    max-width: 100%;
+    justify-self: center;
+    align-self: flex-end;
+}
+
+.formPart {
+    display: flex;
+    flex-direction: column;
+}
+
+.check {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+input {
+    padding: 6px;
+    border-radius: 10px;
+    border: var(--blue) solid 2px;
+}
+
+.submit {
+    background-color: var(--green);
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: var(--blue) solid 2px;
+}
+
+.tables {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px,max-content));
+    gap: 20px;
+}
+
+.bookCard {
+    border: var(--blue) solid 2px;
+    border-radius: 10px;
+    padding: 20px;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.bookCard > p:nth-child(2n-1) {
+    color: #5465FF;
+}
+
+.bookCard > p:nth-child(2n) {
+    padding-bottom: 8px;
+}
+
+.bookCard > button {
+    background-color: var(--red);
+    padding: 8px;
+    justify-self: center;
+    color: var(--grey);
+    border: var(--blue) solid 2px;
+    border-radius: 10px;
+}
+
+.error {
+    color: var(--red);
+    font-size: small;
+    opacity: 0;
 }
